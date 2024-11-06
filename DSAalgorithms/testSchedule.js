@@ -14,14 +14,14 @@ describe("Task Scheduling Algorithm", () => {
 
   it("should handle an empty list of tasks", () => {
     const result = scheduleTasks([]);
-    expect(result.completedTasks).toBe(0); // No tasks to schedule
+    expect(result.completedTasks).toBe(0); 
   });
 
   describe("Task Scheduling Algorithm - Edge Cases", () => {
     it("should handle tasks with deadlines sooner than their durations", () => {
       const tasks = [{ duration: 3, deadline: 2 }];
       const result = scheduleTasks(tasks);
-      expect(result.completedTasks).toBe(0); // Cannot schedule the task as deadline < duration
+      expect(result.completedTasks).toBe(0);
     });
 
     // it("should handle tasks with deadline exactly equal to duration", () => {
@@ -31,7 +31,7 @@ describe("Task Scheduling Algorithm", () => {
     //     { duration: 1, deadline: 1 },
     //   ];
     //   const result = scheduleTasks(tasks);
-    //   expect(result.completedTasks).toBe(3); // All tasks can be scheduled
+    //   expect(result.completedTasks).toBe(3);
     // });
     
     
@@ -41,7 +41,7 @@ describe("Task Scheduling Algorithm", () => {
     it("should handle a single task", () => {
       const tasks = [{ duration: 3, deadline: 5 }];
       const result = scheduleTasks(tasks);
-      expect(result.completedTasks).toBe(1); // Only 1 task, so it should be scheduled
+      expect(result.completedTasks).toBe(1); 
     });
 
     it("should handle tasks that are already sorted by deadline", () => {
@@ -52,7 +52,7 @@ describe("Task Scheduling Algorithm", () => {
         { duration: 3, deadline: 9 },
       ];
       const result = scheduleTasks(tasks);
-      expect(result.completedTasks).toBe(4); // The algorithm should complete all tasks
+      expect(result.completedTasks).toBe(4); 
     });
     
     
